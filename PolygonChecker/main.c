@@ -82,9 +82,9 @@ int* getRectanglePoints(int* rectanglePoints) {
 	printf_s("Enter 4 sets of points for the rectangle");
 	// Sadiya added a structure to hold the points and assign them 
 struct points {
-	int x;
-	int y;
-};
+		int x;
+		int y;
+	};
 
 	// get the sides to form the rectangle in pairs (x and y) 
 	// ex. x1 and y1, x2 and y2, x3 and y3, x4 and y4
