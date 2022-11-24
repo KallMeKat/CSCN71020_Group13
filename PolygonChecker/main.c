@@ -3,6 +3,7 @@
 #include <math.h>
 #include "main.h"
 #include "triangleSolver.h"
+#include <string.h>
 
 // Katarina added the rectangleSolver.h include
 #include "rectangleSolver.h"
@@ -22,11 +23,10 @@ int main() {
 		// Sadiya added the option for the rectangle in the switch case and added the correct functions 
 		case 2:
 			printf_s("Rectangle selected.\n");
-			// got to put function calls here 
-			/*int rectanglePoints[4] = { 0, 0, 0, 0 };
-			int* rectanglePointsPtr = getRectanglePoints(rectanglePoints);
-			char* results = analyzeRectangle(rectanglePointsPtr[0], rectanglePointsPtr[1], rectanglePointsPtr[2], rectanglePointsPtr[3]);
-			printf_s("%s\n", results);*/
+			RECTANGLE rect = getRectanglePoints();
+			RECTANGLESIDES siderect = analyzeRectangle(rect);
+			char* isrect = isItaRectangle(siderect);
+			printf("%s\n", isrect);
 			break;
 
 		case 1:
@@ -81,30 +81,35 @@ int* getTriangleSides(int* triangleSides) {
 }
 
 // Katarina added the comments and the function body for rectangleSides
-double getRectanglePoints(double pair1,double pair2, double pair3, double pair4) {
+RECTANGLE getRectanglePoints(void) {
 	printf_s("Enter 4 sets of points for the rectangle\n");
 	// Katarina added the variable declarations and points scaned
+	RECTANGLE outputedrectangle;
 
-	double x1, x2, x3, x4;
-	double y1, y2, y3, y4;
+	POINTS point1;
+	POINTS point2;
+	POINTS point3;
+	POINTS point4;
 
 	// Katarina added the points for the user to enter 
 	printf("Enter the first point (x1, y1)\n");
-	pair1 = scanf_s("%lf%lf", &x1, &y1);
+	scanf_s("%lf%lf", point1.x, point1.y);
 
 	printf("Enter the second point (x1, y1)\n");
-	pair2 = scanf_s("%lf%lf", &x2, &y2);
+	scanf_s("%lf%lf", point2.x, point2.y);
 
 	printf("Enter the third point (x1, y1)\n");
-	pair3 = scanf_s("%lf%lf", &x3, &y3);
+	scanf_s("%lf%lf", point3.x, point3.y);
 
 	printf("Enter the final point (x1, y1)\n");
-	pair4 = scanf_s("%lf%lf", &x4, &y4);
+	scanf_s("%lf%lf", point4.x, point4.y);
 
-	return pair1;
-	return pair2;
-	return pair3;
-	return pair4;
+	outputedrectangle.point1 = point1;
+	outputedrectangle.point2 = point2;
+	outputedrectangle.point3 = point3;
+	outputedrectangle.point4 = point4;
+
+	return outputedrectangle;
 
 	// get the sides to form the rectangle in pairs (x and y) 
 	// ex. x1 and y1, x2 and y2, x3 and y3, x4 and y4
