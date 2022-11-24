@@ -93,16 +93,16 @@ RECTANGLE getRectanglePoints(void) {
 
 	// Katarina added the points for the user to enter 
 	printf("Enter the first point (x1, y1)\n");
-	scanf_s("%lf%lf", point1.x, point1.y);
+	scanf_s("%lf%lf", &point1.x, &point1.y);
 
 	printf("Enter the second point (x1, y1)\n");
-	scanf_s("%lf%lf", point2.x, point2.y);
+	scanf_s("%lf%lf", &point2.x, &point2.y);
 
 	printf("Enter the third point (x1, y1)\n");
-	scanf_s("%lf%lf", point3.x, point3.y);
+	scanf_s("%lf%lf", &point3.x, &point3.y);
 
 	printf("Enter the final point (x1, y1)\n");
-	scanf_s("%lf%lf", point4.x, point4.y);
+	scanf_s("%lf%lf", &point4.x, &point4.y);
 
 	outputedrectangle.point1 = point1;
 	outputedrectangle.point2 = point2;
