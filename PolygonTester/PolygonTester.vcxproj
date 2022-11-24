@@ -166,6 +166,9 @@
     <ClCompile Include="PolygonTester.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\PolygonChecker\main.h" />
+    <ClInclude Include="..\PolygonChecker\rectangleSolver.h" />
+    <ClInclude Include="..\PolygonChecker\triangleSolver.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
