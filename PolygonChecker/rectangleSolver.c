@@ -27,6 +27,22 @@ RECTANGLESIDES analyzeRectangle(RECTANGLE points) {
 	// takes the pairs of points and forms 4 lines
 	// you can form lines from two points using the distance formula 
 
+
+	// perimeter of the given rectangle
+	float perimeter;
+
+	perimeter = rectside.side1 + rectside.side2 + rectside.side3 + rectside.side4;
+
+	printf("The perimeter of the given rectangle is - %f\n", perimeter);
+
+	// Area of the given rectangle
+
+	float area;
+
+	area = rectside.side1 * rectside.side2;
+
+	printf("The area of the given rectangle is - %f\n", area);
+
 	return rectside;
 }
 
@@ -54,5 +70,6 @@ char* isItaRectangle(RECTANGLESIDES side) {
 		results = "not a rectangle or square";
 	}
 	// don't forget to add the perimeter and area of the rectangle  
+
 	return results;
 }

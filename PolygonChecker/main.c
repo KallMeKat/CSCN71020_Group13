@@ -109,9 +109,14 @@ RECTANGLE getRectanglePoints(void) {
 	outputedrectangle.point3 = point3;
 	outputedrectangle.point4 = point4;
 
+
+
+
 	return outputedrectangle;
 
 	// get the sides to form the rectangle in pairs (x and y) 
 	// ex. x1 and y1, x2 and y2, x3 and y3, x4 and y4
 	// this can be done in a for loop or individually 
+
 }
+
