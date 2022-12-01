@@ -33,7 +33,7 @@ RECTANGLESIDES analyzeRectangle(RECTANGLE points) {
 
 	perimeter = rectside.side1 + rectside.side2 + rectside.side3 + rectside.side4;
 
-	printf("The perimeter of the given rectangle is - %f\n", perimeter);
+	printf("The perimeter of the given rectangle is: %f\n", perimeter);
 
 	// Area of the given rectangle
 
@@ -41,7 +41,7 @@ RECTANGLESIDES analyzeRectangle(RECTANGLE points) {
 
 	area = rectside.side1 * rectside.side2;
 
-	printf("The area of the given rectangle is - %f\n", area);
+	printf("The area of the given rectangle is:  %f\n", area);
 
 	return rectside;
 }

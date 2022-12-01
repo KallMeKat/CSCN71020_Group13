@@ -27,7 +27,7 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 int isItaTriangle(int side1, int side2, int side3) {
 	// first calcluate are the sides inputed form a triangle,
 	if ((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2))
-	{
+	{   
 		printf("\n This is a Valid Tringle");
 		//then find the angles if it is a triangle (Joshua section)
 
@@ -36,10 +36,11 @@ int isItaTriangle(int side1, int side2, int side3) {
 		// to find the largest angle
 		double cosX;
 		double x;
+		double pi = 3.14;
 
 		x = ((pow(side2, 2) + pow(side3, 2) - pow(side1, 2)) / (2 * side2 * side3));
 
-		cosX = cos (x);
+		cosX = acos (x);
 
 		printf("%lf\n", cosX);
 
@@ -47,9 +48,9 @@ int isItaTriangle(int side1, int side2, int side3) {
 		double cosY;
 		double y;
 
-		y = ((pow(side1, 2) + pow(side3, 2) - pow(side2, 2)) / (2 * side1 * side3));
+		y =  ((pow(side1, 2) + pow(side3, 2) - pow(side2, 2)) / (2 * side1 * side3));
 
-		cosY = cos(y);
+		cosY = acos(y);
 
 		printf("%lf\n", cosY);
 
