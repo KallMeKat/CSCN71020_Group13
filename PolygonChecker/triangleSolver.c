@@ -34,36 +34,24 @@ int isItaTriangle(int side1, int side2, int side3) {
 		// program to find the angles
 
 		// to find the largest angle
-		double cosX;
-		double x;
-		double pi = 3.14;
+		float A, B, C, R, s, pi, area;
 
-		x = ((pow(side2, 2) + pow(side3, 2) - pow(side1, 2)) / (2 * side2 * side3));
+		pi = 3.14;
 
-		cosX = acos (x);
+		s = (side1 + side2 + side3) / 2;
 
-		printf("%lf\n", cosX);
+		area = sqrt(s * (s - side1) * (s - side2) * (s - side3));
 
-		// finding second angle
-		double cosY;
-		double y;
+		R = (side1 * side2 * side3) / (4 * area);
 
-		y =  ((pow(side1, 2) + pow(side3, 2) - pow(side2, 2)) / (2 * side1 * side3));
+		A = (180 / pi) * asin(side1 / 2 * R);
+		printf("The first angle is = %f\n", A);
 
-		cosY = acos(y);
+		B = (180 / pi) * asin(side2 / 2 * R);
+		printf("The second angle is = %f\n", B);
 
-		printf("%lf\n", cosY);
-
-
-		// finding last angle
-		double Z;
-
-		Z = 180 - cosY - cosX;
-
-		printf("%lf\n", Z);
-
-
-
+		C = (180 / pi) * asin(side3 / 2 * R);
+		printf("The third angle is = %f\n", C);
 	}
 	else
 	{
@@ -73,4 +61,3 @@ int isItaTriangle(int side1, int side2, int side3) {
 
 	return 0;
 }
-
