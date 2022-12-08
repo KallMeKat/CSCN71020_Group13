@@ -67,11 +67,11 @@ char* isItaRectangle(RECTANGLESIDES side) {
 	printf("The perimeter of the given shape is: %f\n", perimeter);
 
 
-	int area;
+	float area; //sadiya fixed the area function 
 
 	area = side.side1 * side.side2;
 
-	printf("The area of the given rectangle is:  %f\n", area);
+	printf("The area of the given rectangle is: %f\n", area);
 
 	return results;
 }
