@@ -11,17 +11,26 @@ extern "C" {
 #include "../PolygonChecker/main.h"
 }
 namespace PolygonTester
-{
+{   
+	//test cases for the type of triangle
 	TEST_CLASS(analyzingTriangle)
 	{
 	public:
 		
-		//katarina's testcase
+		//Katarina's testcase
 		TEST_METHOD(ScaleneTriangle)
 		{
 			char* actual = analyzeTriangle(4, 5, 6);
 
 			Assert::AreEqual("Scalene triangle", actual);
+		}
+
+		//Katarina's testcase
+		TEST_METHOD(NotTriangle)
+		{
+			char* actual = analyzeTriangle(1, 1, 3);
+
+			Assert::AreEqual("Not a triangle", actual);
 		}
 
 		//sadiya's testcase
@@ -42,15 +51,27 @@ namespace PolygonTester
 
 	};
 
-	//isitatriangle tests here 
-	TEST_CLASS(Triangleisit)
+	//test cases for the triangle angles 
+	TEST_CLASS(TriangleAngles)
 	{
 	public: 
+		//Katarina's testcase
 		TEST_METHOD(trianglevalid1)
 		{ 
 			float angle1, angle2, angle3;
 		    isItaTriangleAngles(4, 5, 6, &angle1, &angle2, &angle3);
 		    float tolerance = 0.01;
+			Assert::AreEqual(angle1, 40.54F, tolerance);
+			Assert::AreEqual(angle2, 68.20F, tolerance);
+			Assert::AreEqual(angle3, 27.66F, tolerance);
+		}
+
+		//Katarina's testcase
+		TEST_METHOD(trianglevalid1)
+		{
+			float angle1, angle2, angle3;
+			isItaTriangleAngles(1, 3, 5, &angle1, &angle2, &angle3);
+			float tolerance = 0.01;
 			Assert::AreEqual(angle1, 25.6F, tolerance);
 			Assert::AreEqual(angle2, 32.69F, tolerance);
 			Assert::AreEqual(angle3, 40.4F, tolerance);
@@ -82,12 +103,12 @@ namespace PolygonTester
 		
 	};
 	
-	//Katarina test Case
+	//test cases for the rectangle points 
 	TEST_CLASS(rectanglePoints)
 	{
 	public:
-
-		TEST_METHOD(PointsRectangle)
+		//Katarina's testcase
+		TEST_METHOD(PointsRectangle1)
 		{   
 			POINTS point1;
 
@@ -121,8 +142,78 @@ namespace PolygonTester
 			Assert::AreEqual(actual.side4, 2.2, tolerance);
 		}
 
+		//Katarina's testcase
+		TEST_METHOD(PointsRectangle2)
+		{
+			POINTS point1;
+
+			point1.x = 1;
+			point1.y = 3;
+
+			POINTS point2;
+			point2.x = 1;
+			point2.y = 9;
+
+			POINTS point3;
+
+			point3.x = 7;
+			point3.y = 3;
+
+			POINTS point4;
+
+			point4.x = 7;
+			point4.y = 9;
+
+			RECTANGLE rectangle;
+			rectangle.point1 = point1;
+			rectangle.point2 = point2;
+			rectangle.point3 = point3;
+			rectangle.point4 = point4;
+			RECTANGLESIDES actual = analyzeRectangle(rectangle);
+			double tolerance = 0.01;
+			Assert::AreEqual(actual.side1, 6.0, tolerance);
+			Assert::AreEqual(actual.side2, 6.0, tolerance);
+			Assert::AreEqual(actual.side3, 6.0, tolerance);
+			Assert::AreEqual(actual.side4, 6.0, tolerance);
+		}
+
+		//Katarina's testcase
+		TEST_METHOD(PointsRectangle2)
+		{
+			POINTS point1;
+
+			point1.x = 2;
+			point1.y = 4;
+
+			POINTS point2;
+			point2.x = 2;
+			point2.y = 10;
+
+			POINTS point3;
+
+			point3.x = 8;
+			point3.y = 4;
+
+			POINTS point4;
+
+			point4.x = 8;
+			point4.y = 10;
+
+			RECTANGLE rectangle;
+			rectangle.point1 = point1;
+			rectangle.point2 = point2;
+			rectangle.point3 = point3;
+			rectangle.point4 = point4;
+			RECTANGLESIDES actual = analyzeRectangle(rectangle);
+			double tolerance = 0.01;
+			Assert::AreEqual(actual.side1, 6.0, tolerance);
+			Assert::AreEqual(actual.side2, 6.0, tolerance);
+			Assert::AreEqual(actual.side3, 6.0, tolerance);
+			Assert::AreEqual(actual.side4, 6.0, tolerance);
+		}
+
 		//sadiya's testcase
-		TEST_METHOD(PointsRectangle)
+		TEST_METHOD(PointsRectangle3)
 		{
 			POINTS point1;
 
@@ -157,71 +248,9 @@ namespace PolygonTester
 		}
 	};
 
-	//Katarina test case
-	TEST_CLASS(sidesofrectnagle)
-	{
-	public:
 
-		TEST_METHOD(IsRectangle)
-		{
-			RECTANGLESIDES rectangle;
 
-			RECTANGLESIDES side1; 
-
-			rectangle.side1 = 5; 
-			rectangle.side2 = 5;
-			rectangle.side3 = 5;
-			rectangle.side4 = 5;
-			char* actual = isItaRectangle(rectangle);
-
-			Assert::AreEqual("Is a square", actual);
-		}
-		
-		//sadiya's testcase
-		TEST_METHOD(IsRectangle)
-		{
-			RECTANGLESIDES rectangle;
-
-			RECTANGLESIDES side1;
-
-			rectangle.side1 = 5;
-			rectangle.side2 = 4;
-			rectangle.side3 = 5;
-			rectangle.side4 = 4;
-			char* actual = isItaRectangle(rectangle);
-
-			Assert::AreEqual("Is a rectangle", actual);
-		}
-
-		//sadiya's testcase
-		TEST_METHOD(IsRectangle)
-		{
-			RECTANGLESIDES rectangle;
-
-			RECTANGLESIDES side1;
-
-			rectangle.side1 = 7;
-			rectangle.side2 = 8;
-			rectangle.side3 = 9;
-			rectangle.side4 = 10;
-			char* actual = isItaRectangle(rectangle);
-
-			Assert::AreEqual("Is not a rectangle or square", actual);
-		}
-	};
-
-	//Katarina test Case
-	/*TEST_CLASS(sidesrectnagle)
-	{
-	public:
-
-		TEST_METHOD(IsRectangle)
-		{
-			char* actual = isItaRectangle(1, 2, 3, 4);
-
-			Assert::AreEqual("Is not a square or rectangle", actual);
-		}
-	};*/
+	
 
 
 

@@ -37,7 +37,7 @@ char* isItaRectangle(RECTANGLESIDES side) {
 
 	// takes those 4 lines (distance1, distance2, distance3, distance4, and compares to see if 2 of them are the same length, if they are the same length, it will report the area of the rectangle and output the perimeter 
 	char* results = "";
-	if (side.side1 == side.side2 == side.side3 == side.side4) {
+	if (side.side1 == side.side2 || side.side3 == side.side4) {
 		results = "This is a square not a rectange";
 	}
 	else if (side.side1 == side.side2 && side.side3 == side.side4) {
@@ -64,14 +64,14 @@ char* isItaRectangle(RECTANGLESIDES side) {
 
 	perimeter = side.side1 + side.side2 + side.side3 + side.side4;
 
-	printf("The perimeter of the given shape is: %f\n", perimeter);
+	printf("The perimeter of the given shape is: %0.2f\n", perimeter);
 
 
 	float area; //sadiya fixed the area function 
 
 	area = side.side1 * side.side2;
 
-	printf("The area of the given rectangle is: %f\n", area);
+	printf("The area of the given rectangle is: %0.2f\n", area);
 
 	return results;
 }
