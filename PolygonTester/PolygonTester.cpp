@@ -246,6 +246,41 @@ namespace PolygonTester
 			Assert::AreEqual(actual.side3, 2.8, tolerance);
 			Assert::AreEqual(actual.side4, 1.4, tolerance);
 		}
+
+		//sadiya's testcase
+		TEST_METHOD(PointsRectangle3)
+		{
+			POINTS point1;
+
+			point1.x = 7;
+			point1.y = 7;
+
+			POINTS point2;
+			point2.x = 7;
+			point2.y = 7;
+
+			POINTS point3;
+
+			point3.x = 7;
+			point3.y = 7;
+
+			POINTS point4;
+
+			point4.x = 7;
+			point4.y = 7;
+
+			RECTANGLE rectangle;
+			rectangle.point1 = point1;
+			rectangle.point2 = point2;
+			rectangle.point3 = point3;
+			rectangle.point4 = point4;
+			RECTANGLESIDES actual = analyzeRectangle(rectangle);
+			double tolerance = 0.01;
+			Assert::AreEqual(actual.side1, 0, tolerance);
+			Assert::AreEqual(actual.side2, 0, tolerance);
+			Assert::AreEqual(actual.side3, 0, tolerance);
+			Assert::AreEqual(actual.side4, 0, tolerance);
+		}
 	};
 
 
