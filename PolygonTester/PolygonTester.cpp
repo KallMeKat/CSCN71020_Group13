@@ -49,6 +49,29 @@ namespace PolygonTester
 			Assert::AreEqual("Equilateral triangle", actual);
 		}
 
+		//Joshua's testcase
+		TEST_METHOD(IsoscelesTriangle)
+		{
+			char* actual = analyzeTriangle(7, 3, 3);
+
+			Assert::AreEqual("Isosceles triangle", actual);
+		}
+
+		//Joshua's testcase
+		TEST_METHOD(EquilateralTriangle)
+		{
+			char* actual = analyzeTriangle(7, 7, 7);
+
+			Assert::AreEqual("Equilateral triangle", actual);
+		}
+
+		//Joshua's testcase
+		TEST_METHOD(ScaleneTriangle)
+		{
+			char* actual = analyzeTriangle(6, 7, 8);
+
+			Assert::AreEqual("Scalene triangle", actual);
+		}
 	};
 
 	//test cases for the triangle angles 
@@ -99,8 +122,27 @@ namespace PolygonTester
 			Assert::AreEqual(angle3, 36.8F, tolerance);
 		}
 
-
+		//Joshua's testcase
+		TEST_METHOD(trianglevalid5)
+		{
+			float angle1, angle2, angle3;
+			isItaTriangleAngles(7, 7, 5, &angle1, &angle2, &angle3);
+			float tolerance = 0.01;
+			Assert::AreEqual(angle1, 43.29F, tolerance);
+			Assert::AreEqual(angle2, 43.29F, tolerance);
+			Assert::AreEqual(angle3, 29.33F, tolerance);
+		}
 		
+		//Joshua's testcase
+		TEST_METHOD(trianglevalid6)
+		{
+			float angle1, angle2, angle3;
+			isItaTriangleAngles(4, 3, 5, &angle1, &angle2, &angle3);
+			float tolerance = 0.01;
+			Assert::AreEqual(angle1, 53.13F, tolerance);
+			Assert::AreEqual(angle2, 36.87F, tolerance);
+			Assert::AreEqual(angle3, 90.00F, tolerance);
+		}
 	};
 	
 	//test cases for the rectangle points 
@@ -280,6 +322,77 @@ namespace PolygonTester
 			Assert::AreEqual(actual.side2, 0, tolerance);
 			Assert::AreEqual(actual.side3, 0, tolerance);
 			Assert::AreEqual(actual.side4, 0, tolerance);
+		}
+
+
+		//Joshua's testcase
+		TEST_METHOD(PointsRectangle4)
+		{
+			POINTS point1;
+
+			point1.x = 2;
+			point1.y = 5;
+
+			POINTS point2;
+			point2.x = 2;
+			point2.y = 7;
+
+			POINTS point3;
+
+			point3.x = 6;
+			point3.y = 5;
+
+			POINTS point4;
+
+			point4.x = 6;
+			point4.y = 7;
+
+			RECTANGLE rectangle;
+			rectangle.point1 = point1;
+			rectangle.point2 = point2;
+			rectangle.point3 = point3;
+			rectangle.point4 = point4;
+			RECTANGLESIDES actual = analyzeRectangle(rectangle);
+			double tolerance = 0.01;
+			Assert::AreEqual(actual.side1, 2.00, tolerance);
+			Assert::AreEqual(actual.side2, 4.00, tolerance);
+			Assert::AreEqual(actual.side3, 4.00, tolerance);
+			Assert::AreEqual(actual.side4, 2.00, tolerance);
+		}
+
+
+		TEST_METHOD(PointsRectangle5)
+		{
+			POINTS point1;
+
+			point1.x = 3;
+			point1.y = 7;
+
+			POINTS point2;
+			point2.x = 3;
+			point2.y = 11;
+
+			POINTS point3;
+
+			point3.x = 6;
+			point3.y = 7;
+
+			POINTS point4;
+
+			point4.x = 6;
+			point4.y = 11;
+
+			RECTANGLE rectangle;
+			rectangle.point1 = point1;
+			rectangle.point2 = point2;
+			rectangle.point3 = point3;
+			rectangle.point4 = point4;
+			RECTANGLESIDES actual = analyzeRectangle(rectangle);
+			double tolerance = 0.01;
+			Assert::AreEqual(actual.side1, 4.00, tolerance);
+			Assert::AreEqual(actual.side2, 3.00, tolerance);
+			Assert::AreEqual(actual.side3, 3.00, tolerance);
+			Assert::AreEqual(actual.side4, 4.00, tolerance);
 		}
 	};
 
