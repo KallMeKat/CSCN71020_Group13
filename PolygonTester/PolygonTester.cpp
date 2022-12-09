@@ -67,7 +67,7 @@ namespace PolygonTester
 		}
 
 		//Katarina's testcase
-		TEST_METHOD(trianglevalid1)
+		TEST_METHOD(trianglevalid2)
 		{
 			float angle1, angle2, angle3;
 			isItaTriangleAngles(1, 3, 5, &angle1, &angle2, &angle3);
@@ -78,7 +78,7 @@ namespace PolygonTester
 		}
 
 		//sadiya's testcase
-		TEST_METHOD(trianglevalid2)
+		TEST_METHOD(trianglevalid3)
 			{
 		      float angle1, angle2, angle3;
 			  isItaTriangleAngles(5, 5, 6, &angle1, &angle2, &angle3);
@@ -89,7 +89,7 @@ namespace PolygonTester
 			}
 		
 		//sadiya's testcase
-		TEST_METHOD(trianglevalid3)
+		TEST_METHOD(trianglevalid4)
 		{
 			float angle1, angle2, angle3;
 			isItaTriangleAngles(5, 5, 5, &angle1, &angle2, &angle3);
@@ -143,7 +143,7 @@ namespace PolygonTester
 		}
 
 		//Katarina's testcase
-		TEST_METHOD(PointsRectangle2)
+		TEST_METHOD(PointsSquare1)
 		{
 			POINTS point1;
 
@@ -178,7 +178,7 @@ namespace PolygonTester
 		}
 
 		//Katarina's testcase
-		TEST_METHOD(PointsRectangle2)
+		TEST_METHOD(PointsSquare2)
 		{
 			POINTS point1;
 
@@ -213,7 +213,7 @@ namespace PolygonTester
 		}
 
 		//sadiya's testcase
-		TEST_METHOD(PointsRectangle3)
+		TEST_METHOD(PointsRectangle2)
 		{
 			POINTS point1;
 
