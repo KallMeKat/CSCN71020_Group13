@@ -11,14 +11,14 @@ extern "C" {
 #include "../PolygonChecker/main.h"
 }
 namespace PolygonTester
-{   
+{
 	//test cases for the type of triangle
 	TEST_CLASS(analyzingTriangle)
 	{
 	public:
-		
+
 		//Katarina's testcase
-		TEST_METHOD(ScaleneTriangle)
+		TEST_METHOD(ScaleneTriangle1)
 		{
 			char* actual = analyzeTriangle(4, 5, 6);
 
@@ -26,7 +26,7 @@ namespace PolygonTester
 		}
 
 		//Katarina's testcase
-		TEST_METHOD(NotTriangle)
+		TEST_METHOD(NotTriangle1)
 		{
 			char* actual = analyzeTriangle(1, 1, 3);
 
@@ -34,7 +34,7 @@ namespace PolygonTester
 		}
 
 		//sadiya's testcase
-		TEST_METHOD(IsoscelesTriangle)
+		TEST_METHOD(IsoscelesTriangle1)
 		{
 			char* actual = analyzeTriangle(4, 2, 2);
 
@@ -42,7 +42,7 @@ namespace PolygonTester
 		}
 
 		//sadiya's testcase
-		TEST_METHOD(EquilateralTriangle)
+		TEST_METHOD(EquilateralTriangle1)
 		{
 			char* actual = analyzeTriangle(4, 4, 4);
 
@@ -50,7 +50,7 @@ namespace PolygonTester
 		}
 
 		//Joshua's testcase
-		TEST_METHOD(IsoscelesTriangle)
+		TEST_METHOD(IsoscelesTriangle2)
 		{
 			char* actual = analyzeTriangle(7, 3, 3);
 
@@ -58,7 +58,7 @@ namespace PolygonTester
 		}
 
 		//Joshua's testcase
-		TEST_METHOD(EquilateralTriangle)
+		TEST_METHOD(EquilateralTriangle2)
 		{
 			char* actual = analyzeTriangle(7, 7, 7);
 
@@ -66,7 +66,7 @@ namespace PolygonTester
 		}
 
 		//Joshua's testcase
-		TEST_METHOD(ScaleneTriangle)
+		TEST_METHOD(ScaleneTriangle2)
 		{
 			char* actual = analyzeTriangle(6, 7, 8);
 
@@ -77,13 +77,13 @@ namespace PolygonTester
 	//test cases for the triangle angles 
 	TEST_CLASS(TriangleAngles)
 	{
-	public: 
+	public:
 		//Katarina's testcase
 		TEST_METHOD(trianglevalid1)
-		{ 
+		{
 			float angle1, angle2, angle3;
-		    isItaTriangleAngles(4, 5, 6, &angle1, &angle2, &angle3);
-		    float tolerance = 0.01;
+			isItaTriangleAngles(4, 5, 6, &angle1, &angle2, &angle3);
+			float tolerance = 0.01;
 			Assert::AreEqual(angle1, 40.54F, tolerance);
 			Assert::AreEqual(angle2, 68.20F, tolerance);
 			Assert::AreEqual(angle3, 27.66F, tolerance);
@@ -102,15 +102,15 @@ namespace PolygonTester
 
 		//sadiya's testcase
 		TEST_METHOD(trianglevalid3)
-			{
-		      float angle1, angle2, angle3;
-			  isItaTriangleAngles(5, 5, 6, &angle1, &angle2, &angle3);
-			  float tolerance = 0.01;
-			  Assert::AreEqual(angle1, 53.1F, tolerance);
-			  Assert::AreEqual(angle2, 53.1F, tolerance);
-			  Assert::AreEqual(angle3, 73.7F, tolerance);
-			}
-		
+		{
+			float angle1, angle2, angle3;
+			isItaTriangleAngles(5, 5, 6, &angle1, &angle2, &angle3);
+			float tolerance = 0.01;
+			Assert::AreEqual(angle1, 53.1F, tolerance);
+			Assert::AreEqual(angle2, 53.1F, tolerance);
+			Assert::AreEqual(angle3, 73.7F, tolerance);
+		}
+
 		//sadiya's testcase
 		TEST_METHOD(trianglevalid4)
 		{
@@ -132,7 +132,7 @@ namespace PolygonTester
 			Assert::AreEqual(angle2, 43.29F, tolerance);
 			Assert::AreEqual(angle3, 29.33F, tolerance);
 		}
-		
+
 		//Joshua's testcase
 		TEST_METHOD(trianglevalid6)
 		{
@@ -144,14 +144,14 @@ namespace PolygonTester
 			Assert::AreEqual(angle3, 90.00F, tolerance);
 		}
 	};
-	
+
 	//test cases for the rectangle points 
 	TEST_CLASS(rectanglePoints)
 	{
 	public:
 		//Katarina's testcase
 		TEST_METHOD(PointsRectangle1)
-		{   
+		{
 			POINTS point1;
 
 			point1.x = 5;
@@ -395,6 +395,8 @@ namespace PolygonTester
 			Assert::AreEqual(actual.side4, 4.00, tolerance);
 		}
 	};
+
+}
 
 
 
