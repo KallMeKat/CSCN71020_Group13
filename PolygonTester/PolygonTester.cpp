@@ -34,11 +34,11 @@ namespace PolygonTester
 		}
 
 		//sadiya's testcase
-		TEST_METHOD(IsoscelesTriangle1)
+		TEST_METHOD(NotTriangle2)
 		{
 			char* actual = analyzeTriangle(4, 2, 2);
 
-			Assert::AreEqual("Isosceles triangle", actual);
+			Assert::AreEqual("Not a triangle", actual);
 		}
 
 		//sadiya's testcase
@@ -50,9 +50,9 @@ namespace PolygonTester
 		}
 
 		//Joshua's testcase
-		TEST_METHOD(IsoscelesTriangle2)
+		TEST_METHOD(IsoscelesTriangle1)
 		{
-			char* actual = analyzeTriangle(7, 3, 3);
+			char* actual = analyzeTriangle(9, 9, 7);
 
 			Assert::AreEqual("Isosceles triangle", actual);
 		}
@@ -84,20 +84,20 @@ namespace PolygonTester
 			float angle1, angle2, angle3;
 			isItaTriangleAngles(4, 5, 6, &angle1, &angle2, &angle3);
 			float tolerance = 0.01;
-			Assert::AreEqual(angle1, 40.54F, tolerance);
-			Assert::AreEqual(angle2, 68.20F, tolerance);
-			Assert::AreEqual(angle3, 27.66F, tolerance);
+			Assert::AreEqual(angle1, 25.60F, tolerance);
+			Assert::AreEqual(angle2, 32.69F, tolerance);
+			Assert::AreEqual(angle3, 40.40F, tolerance);
 		}
 
 		//Katarina's testcase
 		TEST_METHOD(trianglevalid2)
 		{
 			float angle1, angle2, angle3;
-			isItaTriangleAngles(1, 3, 5, &angle1, &angle2, &angle3);
+			isItaTriangleAngles(7, 8, 9, &angle1, &angle2, &angle3);
 			float tolerance = 0.01;
-			Assert::AreEqual(angle1, 25.6F, tolerance);
-			Assert::AreEqual(angle2, 32.69F, tolerance);
-			Assert::AreEqual(angle3, 40.4F, tolerance);
+			Assert::AreEqual(angle1, 48.19F, tolerance);
+			Assert::AreEqual(angle2, 58.41F, tolerance);
+			Assert::AreEqual(angle3, 73.40F, tolerance);
 		}
 
 		//sadiya's testcase
@@ -106,9 +106,9 @@ namespace PolygonTester
 			float angle1, angle2, angle3;
 			isItaTriangleAngles(5, 5, 6, &angle1, &angle2, &angle3);
 			float tolerance = 0.01;
-			Assert::AreEqual(angle1, 53.1F, tolerance);
-			Assert::AreEqual(angle2, 53.1F, tolerance);
-			Assert::AreEqual(angle3, 73.7F, tolerance);
+			Assert::AreEqual(angle1, 53.13F, tolerance);
+			Assert::AreEqual(angle2, 53.13F, tolerance);
+			Assert::AreEqual(angle3, 73.74F, tolerance);
 		}
 
 		//sadiya's testcase
@@ -117,9 +117,9 @@ namespace PolygonTester
 			float angle1, angle2, angle3;
 			isItaTriangleAngles(5, 5, 5, &angle1, &angle2, &angle3);
 			float tolerance = 0.01;
-			Assert::AreEqual(angle1, 36.8F, tolerance);
-			Assert::AreEqual(angle2, 36.8F, tolerance);
-			Assert::AreEqual(angle3, 36.8F, tolerance);
+			Assert::AreEqual(angle1, 36.77F, tolerance);
+			Assert::AreEqual(angle2, 36.77F, tolerance);
+			Assert::AreEqual(angle3, 36.77F, tolerance);
 		}
 
 		//Joshua's testcase
@@ -178,10 +178,10 @@ namespace PolygonTester
 			rectangle.point4 = point4;
 			RECTANGLESIDES actual = analyzeRectangle(rectangle);
 			double tolerance = 0.01;
-			Assert::AreEqual(actual.side1, 2.2, tolerance);
-			Assert::AreEqual(actual.side2, 2.0, tolerance);
-			Assert::AreEqual(actual.side3, 2.0, tolerance);
-			Assert::AreEqual(actual.side4, 2.2, tolerance);
+			Assert::AreEqual(actual.side1, 2.24, tolerance);
+			Assert::AreEqual(actual.side2, 2.00, tolerance);
+			Assert::AreEqual(actual.side3, 2.00, tolerance);
+			Assert::AreEqual(actual.side4, 2.24, tolerance);
 		}
 
 		//Katarina's testcase
@@ -283,10 +283,10 @@ namespace PolygonTester
 			rectangle.point4 = point4;
 			RECTANGLESIDES actual = analyzeRectangle(rectangle);
 			double tolerance = 0.01;
-			Assert::AreEqual(actual.side1, 1.4, tolerance);
-			Assert::AreEqual(actual.side2, 2.8, tolerance);
-			Assert::AreEqual(actual.side3, 2.8, tolerance);
-			Assert::AreEqual(actual.side4, 1.4, tolerance);
+			Assert::AreEqual(actual.side1, 1.41, tolerance);
+			Assert::AreEqual(actual.side2, 2.83, tolerance);
+			Assert::AreEqual(actual.side3, 2.83, tolerance);
+			Assert::AreEqual(actual.side4, 1.41, tolerance);
 		}
 
 		//sadiya's testcase

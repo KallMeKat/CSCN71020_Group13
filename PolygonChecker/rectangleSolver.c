@@ -19,6 +19,7 @@ RECTANGLESIDES analyzeRectangle(RECTANGLE points) {
 	rectside.side3 = sqrt((points.point4.x - points.point2.x) * (points.point4.x - points.point2.x) + (points.point4.y- points.point2.y) * (points.point4.y- points.point2.y));
 	rectside.side4 = sqrt((points.point4.x- points.point3.x) * (points.point4.x- points.point3.x) + (points.point4.y - points.point3.y) * (points.point4.y - points.point3.y));
 
+
 	return rectside;
 }
 
